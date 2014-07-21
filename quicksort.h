@@ -10,19 +10,22 @@ using std::endl;
 template <typename T>
 void quickSort(T structure, int begin, int end)
 {
-    int left(begin), right(end), half;
-    half = structure[(begin + end)/2];
+    int left = begin;
+    int right = end;
+
+    int half = structure[(begin + end)/2];
+
     while(left <= right)
     {
         while(structure[left] < half && left < end)
         {
             left++;
-            cout << "aumento esquerda" << endl;
+            //cout << "aumento esquerda" << endl;
         }
         while(structure[right] > half && right > begin)
         {
             right--;
-            cout << "diminuiu direita" << endl;
+            //cout << "diminuiu direita" << endl;
         }
         if(left <= right)
         {
@@ -30,11 +33,11 @@ void quickSort(T structure, int begin, int end)
             y = structure[left];
             structure[left] = structure[right];
             structure[right] = y;
-            cout << "troca esqyerda direita" << endl;
+            //cout << "troca esqyerda direita" << endl;
             left++;
-            cout << "aumento esquerda" << endl;
+            //cout << "aumento esquerda" << endl;
             right--;
-            cout << "diminuiu direita" << endl;
+            //cout << "diminuiu direita" << endl;
 
         }
     }
